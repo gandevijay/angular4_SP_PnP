@@ -1,0 +1,23 @@
+[
+    {
+        "advisoriesId":1,
+        "title": "Tile",
+    "advisoryType":"advisoryType",  
+ "effectiveDate":"effectiveDate",  
+ "xml":"effectiveDate",  
+ "productGroup": 1001,  
+  "product":"effectiveDate", 
+  "entityType":"effectiveDate", 
+  "actualStartDate":"effectiveDate"   },
+  {
+    "advisoriesId":2,
+    "title": "Tile2",
+"advisoryType":"advisoryType2",  
+"effectiveDate":"effectiveDate",  
+"xml":"effectiveDate",  
+"productGroup": 1002,
+"product":"effectiveDate", 
+"entityType":"effectiveDate", 
+"actualStartDate":"effectiveDate"    }
+    
+]
