@@ -9,25 +9,26 @@ import { AdvisoriesService } from './advisories.service';
   styleUrls: ['./advisories.component.css']
 })
 export class AdvisoriesComponent implements OnInit {
-  
-    pageTitle: string = 'Advisories Detail';
-    errorMessage: string;
-    advisories: IAdvisories;
-  
-    constructor(private _route: ActivatedRoute,
-      private _router: Router,
-      private _advisoriesService: AdvisoriesService) { }
-            
-    ngOnInit(): void {
-      this._advisoriesService.getAdvisories()
-              .subscribe(advisories => 
-                  this.advisories = advisories,
-                  error => this.errorMessage = <any>error);
+  pageTitle: string = 'Advisories Detail';
+  errorMessage: string;
+  advisories: IAdvisories[];
+
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _advisoriesService: AdvisoriesService
+  ) {}
+
+  ngOnInit(): void {
+    this._advisoriesService
+      .getAdvisories()
+      .subscribe(
+        advisories => (this.advisories = advisories),
+        error => (this.errorMessage = <any>error)
+      );
   }
-  
-    onBack(): void {
-      this._router.navigate(['/advisories']);
-    }
-  
+
+  onBack(): void {
+    this._router.navigate(['/advisories']);
   }
-  
+}

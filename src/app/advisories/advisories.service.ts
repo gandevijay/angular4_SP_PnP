@@ -5,13 +5,13 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
-
+import * as pnp from '@pnp/sp';
 import { IAdvisories } from './advisories';
 
 @Injectable()
 export class AdvisoriesService {
     private _advisoriesUrl = './api/advisories/advisories.json';
-
+    // private _advSPURL = pnp.sp.web.lists.getByTitle('Advisories').items.get();
     constructor(private _http: HttpClient) { }
 
     getAdvisories(): Observable<IAdvisories[]> {
@@ -19,7 +19,7 @@ export class AdvisoriesService {
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
-    
+
     private handleError(err: HttpErrorResponse) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console

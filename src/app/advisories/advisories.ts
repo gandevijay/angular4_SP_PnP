@@ -1,5 +1,6 @@
 export interface IAdvisories {
     advisoriesId: number;
+    name: string;
     title: string;
     advisoryType: string;
     effectiveDate: string;
@@ -7,5 +8,5 @@ export interface IAdvisories {
     productGroup: number;
     product: string;
     entityType: string;
-    actualStartDate: string;   
+    actualStartDate: string;
 }

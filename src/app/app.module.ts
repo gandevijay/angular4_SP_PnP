@@ -2,29 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductModule } from './products/product.module';
-import { LoginComponent } from './login/login.component';
-import { AdvisoriesComponent } from './advisories/src/app/advisories/advisories/advisories.component';
+import { AdvisoriesModule } from './advisories/advisories.module';
+import { DataTableModule } from 'angular-4-data-table/src/index';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    LoginComponent,
-    AdvisoriesComponent
+    WelcomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, DataTableModule,
     HttpClientModule,
-    RouterModule.forRoot([
+        RouterModule.forRoot([
         { path: 'welcome', component: WelcomeComponent },
         { path: '', redirectTo: 'welcome', pathMatch: 'full'},
         { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
     ]),
-    ProductModule
+    ProductModule,
+    AdvisoriesModule
   ],
   bootstrap: [AppComponent]
 })
